@@ -32,6 +32,25 @@ def welcome():
     return "Welcome All"
 
 #@app.route('/predict',methods=["Get"])
+def set_bg_hack_url():
+    '''
+    A function to unpack an image from url and set as bg.
+    Returns
+    -------
+    The background.
+    '''
+        
+    st.markdown(
+         f"""
+         <style>
+         .stApp {{
+             background: url("https://cdn.pixabay.com/photo/2020/06/19/22/33/wormhole-5319067_960_720.jpg");
+             background-size: cover
+         }}
+         </style>
+         """,
+         unsafe_allow_html=True
+     )
 def predict_note_authentication(variance,skewness,curtosis,entropy):
     
     """Let's Authenticate the Banks Note 
@@ -71,17 +90,7 @@ def main():
     <h2 style="color:#000066;text-align:center;">Loan Defaulter Predictor</h2>
     </div>
     """
-    st.markdown(
-        f"""
-        <style>
-        .stApp {{
-            background: url("https://cdn.pixabay.com/photo/2020/06/19/22/33/wormhole-5319067_960_720.jpg");
-            background-size: cover
-        }}
-        </style>
-        """,
-        unsafe_allow_html=True
-    )
+    set_bg_hack_url()
     st.markdown(html_temp,unsafe_allow_html=True)
     variance = st.text_input("Variance","Type Here")
     skewness = st.text_input("skewness","Type Here")
@@ -97,6 +106,3 @@ def main():
 
 if __name__=='__main__':
     main()
-    
-    
-    
