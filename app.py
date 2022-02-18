@@ -88,6 +88,20 @@ def predict_note_authentication(variance,skewness,curtosis,entropy):
     return prediction
 
 def main():
+    main_bg = "1.jpg"
+    main_bg_ext = "jpg"
+
+    st.markdown(
+        f"""
+        <style>
+        .reportview-container {{
+            background: url(data:image/{main_bg_ext};base64,{base64.b64encode(open(main_bg, "rb").read()).decode()})
+        }}
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
+    
     st.title("Bank Authenticator")
     html_temp = """
     <div style="background-color:lime;padding:10px">
