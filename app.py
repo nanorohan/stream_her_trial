@@ -64,14 +64,31 @@ def predict_note_authentication(variance,skewness,curtosis,entropy):
     print(prediction)
     return prediction
 
-
+def set_bg_hack_url():
+    '''
+    A function to unpack an image from url and set as bg.
+    Returns
+    -------
+    The background.
+    '''
+        
+    st.markdown(
+         f"""
+         <style>
+         .stApp {{
+             background: url("https://cdn.pixabay.com/photo/2020/06/19/22/33/wormhole-5319067_960_720.jpg");
+             background-size: cover
+         }}
+         </style>
+         """,
+         unsafe_allow_html=True
+     )
 
 def main():
     st.title("Bank Authenticator")
     html_temp = """
-    <img src="img_chania.jpg" style="width: 100%"; >
-    <div style="background-color:tomato;padding:10px">
-    <h2 style="color:white;text-align:center;">Streamlit Bank Authenticator ML App </h2>
+    <div style="background-color:lime;padding:10px">
+    <h2 style="color:#000066;text-align:center;">Loan Defaulter Predictor</h2>
     </div>
     """
     st.markdown(html_temp,unsafe_allow_html=True)
