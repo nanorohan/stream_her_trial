@@ -69,6 +69,7 @@ def predict_note_authentication(variance,skewness,curtosis,entropy):
 def main():
     st.title("Bank Authenticator")
     html_temp = """
+    <img src="img_chania.jpg" style="width: 100%"; >
     <div style="background-color:tomato;padding:10px">
     <h2 style="color:white;text-align:center;">Streamlit Bank Authenticator ML App </h2>
     </div>
